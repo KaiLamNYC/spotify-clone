@@ -47,6 +47,14 @@ app.use('/api/users', userRouter)
 const artistRouter = require('./routes/api/artistRouter')
 app.use('/api/artists', artistRouter)
 
+//playlist router
+const playlistRouter = require('./routes/api/playlistRouter')
+app.use('/api/playlists', playlistRouter)
+
+//songs router
+const songRouter = require('./routes/api/songRouter')
+app.use('/api/songs', songRouter)
+
 //port stuff at the end
 const PORT = 3000;
 
