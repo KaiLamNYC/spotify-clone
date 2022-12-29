@@ -14,9 +14,16 @@ const playlistSchema = new mongoose.Schema(
         }],
         //one to many relationship
         //one user can have many playlists but a playlist can only be 'owned' by one user
-        User: {
+        //changed to creator since thats the 'owner' of the playlist
+        Creator: {
             type: Schema.Types.ObjectId,
             ref: 'User'
+        },
+        //users can like the playlist then it will add to "library" and basically with all playlists
+        UserLikes: {
+            type: Number,
+            required: true,
+            default: 0
         }
         
        

@@ -13,16 +13,17 @@ const albumSchema = new mongoose.Schema(
         },
         Artist: [{
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'Artist'
         }],
         Songs: [{
             type: Schema.Types.ObjectId,
             ref: "Song"
         }],
-        UserLikes: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }] 
+        UserLikes: {
+            type: Number,
+            required: true,
+            default: 0
+        }
 
     }
 )

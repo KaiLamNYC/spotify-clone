@@ -14,10 +14,11 @@ const songSchema = new mongoose.Schema(
             type: Schema.Types.ObjectId,
             ref: "Artist"
         }],
-        UserLikes: [{
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }]
+        UserLikes: {
+            type: Number,
+            required: true,
+            default: 0
+        }
     }
 )
 

@@ -13,7 +13,13 @@ const artistSchema = new mongoose.Schema(
         Albums: [{
             type: Schema.Types.ObjectId,
             ref: "Album"
-        }]
+        }],
+        //everytime somebody clicks the follow, adds one and also adds to users follow list
+        Followers: {
+            type: Number,
+            required: true,
+            default: 0
+        }
     }
 )
 
