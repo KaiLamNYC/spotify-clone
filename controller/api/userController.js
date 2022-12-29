@@ -22,6 +22,25 @@ async function getAllUsers(req, res){
     }
 }
 
+//function to create a new user
+async function createNewUser(req, res) {
+    //change to then catch later like albums
+    try {
+
+        let newUser = req.body
+
+        User.create(req.body)
+
+        res.json({
+            message:'success',
+            payload: req.body
+        })
+
+    } catch (err) {
+
+    }
+}
+
 module.exports = {
     getAllUsers
 }
