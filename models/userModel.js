@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: false,
             unique: false,
-            defaul: 'https://i.kym-cdn.com/photos/images/newsfeed/001/865/673/cc9.png'
+            default: 'https://i.kym-cdn.com/photos/images/newsfeed/001/865/673/cc9.png'
         },
         ArtistsFollowed: [{
             type: Schema.Types.ObjectId,
