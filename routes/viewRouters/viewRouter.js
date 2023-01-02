@@ -17,7 +17,8 @@ const {
 } = require('../../controller/view/viewArtistController')
 
 const {
-  renderAllAlbums
+  renderAllAlbums,
+  renderOneAlbum
 } = require('../../controller/view/viewAlbumController')
 
 const {
@@ -45,6 +46,8 @@ router.get('/artist/:id', renderOneArtist);
 //ALBUM RENDERS
 //rendering all of the albums
 router.get('/allAlbums', renderAllAlbums);
+//rendering one album
+router.get('/album/:id', renderOneAlbum);
 
 //SONG RENDERS
 //rendering all of the songs

@@ -19,7 +19,7 @@ async function renderOneArtist(req, res) {
 
         //grabbing all of the artists albums for the view
         let artistAlbums = await Album.find({ _id: result[0].Albums[0] })
-        console.log(artistAlbums);
+        // console.log(artistAlbums);
         // console.log(result);
         res.render('oneArtist', { artist: result[0], albums: artistAlbums})
     } catch (err) {

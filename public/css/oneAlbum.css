@@ -1,0 +1,43 @@
+.album-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .album-page img {
+    width: 8em;
+    height: 8em;
+    object-fit: cover;
+    margin-bottom: 1em;
+  }
+  
+  .album-page h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  .album-page p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .album-page .songs {
+    margin-top: 1em;
+  }
+  
+  .album-page .song {
+    margin-bottom: 1em;
+  }
+  
+  .album-page .song h3 {
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  .album-page .song p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #999;
+  }
+  

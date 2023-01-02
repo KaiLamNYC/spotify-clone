@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/oneAlbum.css">
+    <title>One Album</title>
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <div class="album-page">
+        <img src="<%=album.Img%>" alt="Album cover">
+        <h1>
+            <%=album.Name%>
+        </h1>
+        <p>by 
+            <a href="/artist/<%=album.Artist%>">
+
+            <%=album.Artist%>
+            </a>
+        </p>
+        <p>Likes: <%=album.UserLikes%></p>
+        <div class="songs">
+          <h2>Songs</h2>
+          <%songs.forEach((song) => {%>
+                <div class="song">
+                    <h3>
+                        <a href="/song/<%=song._id%>">
+
+                        <%=song.Name%>
+                        </a>
+                    </h3>
+                    <%song.Artists.forEach((artist) => {%>
+                        <p>
+                            <a href="/artist/<%=artist%>">
+
+                                <%=artist%>
+                            </a>
+                        </p>
+
+                    <%})%>
+                    
+                   
+                </div>
+
+                <%})%>
+          
+          
+        </div>
+      </div>
+      
+</body>
+</html>

@@ -25,6 +25,23 @@ async function getAllAlbums(req, res) {
     }
 }
 
+async function getOneAlbum(req, res) {
+    try{
+        let result = await Album.find({ _id: req.params.id })
+        res.json({
+            message:'success finding album',
+            payload: result
+        }) 
+    } catch (err) {
+        console.log(`getOneAlbum eroor ${err}`);
+        res.json({
+            message: 'failure',
+            payload: err
+        })
+    }
+}
+
 module.exports = {
-    getAllAlbums
+    getAllAlbums,
+    getOneAlbum
 }

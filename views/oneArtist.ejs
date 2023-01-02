@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/home.css">
     <link rel="stylesheet" href="/oneArtist.css">
-    <title>One Artist</title>
+    <title><%=artist.Name%></title>
 </head>
 <body>
 
@@ -20,7 +20,11 @@
           <% albums.forEach((album) => { %>
             <div class="album"> 
               <img src="<%=album.Img%>" alt="Album cover">
-              <h3><%=album.Name%></h3>
+              <h3>
+                <a href="/album/<%=album._id%>">
+                  <%=album.Name%>
+              </a>
+              </h3>
             </div>
           <%})%>
         </div>
