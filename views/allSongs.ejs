@@ -22,7 +22,14 @@
                     <%=song.Name%>
                 </a>
               </h3>
-              <p class="artist-tag">by <%=song.Artist%></p>
+              <p class="artist-tag">by
+                <% song.Artists.forEach((artist) => { %>
+                  <a href="/song/<%=artist%>">
+                    <%=artist%>
+                  </a>
+                <%})%>
+                
+              </p>
               <p>Likes: <%=song.UserLikes%></p>
             </div>
         </div>

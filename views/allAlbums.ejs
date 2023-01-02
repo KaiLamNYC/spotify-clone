@@ -21,7 +21,11 @@
                     <%=album.Name%>
                 </a>
               </h3>
-              <p class="artist-tag">by <%=album.Artist%></p>
+              <p class="artist-tag">by 
+                <a href="/artist/<%=album.Artist%>">
+                  <%=album.Artist%>
+                </a>
+              </p>
               <p>Likes: <%=album.UserLikes%></p>
             </div>
         </div>

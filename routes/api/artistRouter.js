@@ -13,6 +13,8 @@ const {
 router.get('/allArtists', getAllArtists)
 
 //function to add album to artist profile for backend use
+//localhost:3000/api/artists/addAlbumToArtist
+
 router.post('/addAlbumToArtist', addAlbumToArtist)
 
 module.exports = router

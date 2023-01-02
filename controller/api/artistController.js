@@ -49,10 +49,10 @@ async function addAlbumToArtist(req, res) {
             payload: [artistDoc, albumDoc]
         })
     } catch (err) {
-        console.log(error);
+        console.log(err);
         res.json({
             message: 'failed',
-            payload: error
+            payload: err
         })
 
     }
