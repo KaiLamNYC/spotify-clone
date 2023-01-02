@@ -17,12 +17,12 @@ const artistSchema = new mongoose.Schema(
         //everytime somebody clicks the follow, adds one and also adds to users follow list
         Followers: {
             type: Number,
-            required: true,
+            required: false,
             default: 0
         },
         Img: {
             type: String,
-            required: false,
+            required: true,
             unique: false,
         },
     }

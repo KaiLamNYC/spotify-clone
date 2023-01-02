@@ -24,6 +24,29 @@ async function getAllSongs(req, res) {
     }
 }
 
+//function to add a new song, need to test if album attribute is added after modicification
+async function addNewSong(req, res) {
+    try {
+        //taking the entire request and settting to var
+        let newSong = req.body
+        //creating new song document with the body
+        await Song.create(newSong)
+        res.json({
+            message:'success',
+            payload: newSong
+        })
+    } catch (err) {
+        console.log(`addNewSong error: ${err}`);
+
+        // client-side
+        res.json({
+            message: "failure",
+            payload: `addNewSong error: ${err}`
+        });
+    }
+}
+
 module.exports = {
-    getAllSongs
+    getAllSongs,
+    addNewSong
 }

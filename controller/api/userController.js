@@ -6,7 +6,7 @@ const User = require('../../models/userModel')
 async function getAllUsers(req, res){
     try {
 
-        let result = await User.findOne({})
+        let result = await User.find({})
 
         res.json({
             message: 'success',
@@ -23,23 +23,23 @@ async function getAllUsers(req, res){
 }
 
 //function to create a new user
-async function createNewUser(req, res) {
-    //change to then catch later like albums
-    try {
+// async function createNewUser(req, res) {
+//     //change to then catch later like albums
+//     try {
 
-        let newUser = req.body
+//         let newUser = req.body
 
-        User.create(req.body)
+//         User.create(req.body)
 
-        res.json({
-            message:'success',
-            payload: req.body
-        })
+//         res.json({
+//             message:'success',
+//             payload: req.body
+//         })
 
-    } catch (err) {
+//     } catch (err) {
 
-    }
-}
+//     }
+// }
 
 module.exports = {
     getAllUsers

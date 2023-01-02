@@ -21,12 +21,12 @@ const albumSchema = new mongoose.Schema(
         }],
         UserLikes: {
             type: Number,
-            required: true,
+            required: false,
             default: 0
         },
         Img: {
             type: String,
-            required: false,
+            required: true,
             unique: false,
         },
 

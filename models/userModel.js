@@ -12,10 +12,16 @@ const userSchema = new mongoose.Schema(
         },
         Img: {
             type: String,
-            required: false,
+            required: true,
             unique: false,
             default: 'https://i.kym-cdn.com/photos/images/newsfeed/001/865/673/cc9.png'
         },
+        //artists in your library is artistfollowed but is different from your profile which has following at the bottom including following users
+        //artist followed  displayed in library view and profile following view
+        //but users followed only displayed in profile following view
+        //not gonna add cuz rlly no benefit in rlly following users so dont worry about the view just keep it simple stupid
+        //just going to do the artist followed since that makes more sense
+        //they prob just did it to add a social media aspect
         ArtistsFollowed: [{
             type: Schema.Types.ObjectId,
             ref: 'Artist'
