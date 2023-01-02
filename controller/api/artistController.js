@@ -59,10 +59,30 @@ async function addAlbumToArtist(req, res) {
 
 }
 
+//function to get one artist
+async function getOneArtist(req, res) {
+    try {
+
+        let result = await Artist.find({ _id: req.params.id })
+        res.json({
+            message:'success finding artist',
+            payload: result
+        })
+    } catch (err) {
+        console.log(`getOneArtist eroor ${err}`);
+        res.json({
+            message: 'failure',
+            payload: err
+        })
+
+    }
+}
+
 
 
 
 module.exports = {
     getAllArtists,
-    addAlbumToArtist
+    addAlbumToArtist,
+    getOneArtist
 }

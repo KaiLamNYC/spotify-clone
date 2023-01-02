@@ -22,25 +22,27 @@ async function getAllUsers(req, res){
     }
 }
 
-//function to create a new user
-// async function createNewUser(req, res) {
-//     //change to then catch later like albums
-//     try {
+//function to get one user
+async function getOneUser(req, res){
+    try{
+        //.name refers to the param set in router
+        let result = await User.find({ UserName: req.params.name })
+        res.json({
+            message: 'success finding user',
+            payload: result
+        })
 
-//         let newUser = req.body
+    } catch (err) {
+        console.log(`getOneUser error: ${err}`);
+        res.json({
+            message: 'error',
+            payload: err
+        })
 
-//         User.create(req.body)
-
-//         res.json({
-//             message:'success',
-//             payload: req.body
-//         })
-
-//     } catch (err) {
-
-//     }
-// }
+    }
+}
 
 module.exports = {
-    getAllUsers
+    getAllUsers,
+    getOneUser
 }

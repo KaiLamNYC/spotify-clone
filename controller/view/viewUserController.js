@@ -13,6 +13,21 @@ async function renderAllUsers(req, res) {
     }
 }
 
+//function to render a single user
+async function renderOneUser(req, res) {
+    try {
+        let result = await User.find({ UserName: req.params.name })
+        console.log(result);
+
+        res.render('oneUser', { user: result[0]})
+    } catch (err) {
+        console.log(`renderOneUser error: ${err}`);
+
+    }
+}
+
+
 module.exports = {
-    renderAllUsers
+    renderAllUsers,
+    renderOneUser
 }

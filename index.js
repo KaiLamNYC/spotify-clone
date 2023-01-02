@@ -18,7 +18,7 @@ app.set('view engine', 'ejs')
 app.set("views", path.join(__dirname, 'views'));
 
 //serving up the static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/css')));
 
 //logging all the requests with morgan in the terminal
 app.use(logger('dev'));
