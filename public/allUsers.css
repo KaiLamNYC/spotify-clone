@@ -1,0 +1,25 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+  
+  .user-card img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5em;
+  }
+  
+  .user-card h3 {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: normal;
+  }
+
+
+  

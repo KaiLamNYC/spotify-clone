@@ -1,0 +1,34 @@
+.artist-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+  
+  .artist-card img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+  
+  .artist-card .artist-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .artist-card h3 {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: normal;
+  }
+  
+  .artist-card p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #666;
+  }
+  

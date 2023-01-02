@@ -14,7 +14,7 @@ const connectToMongoDB = require('./database/mongodb')
 //middleware stuff
 
 //setting path to ejs
-app.set('view, engine', 'ejs')
+app.set('view engine', 'ejs')
 app.set("views", path.join(__dirname, 'views'));
 
 //serving up the static files

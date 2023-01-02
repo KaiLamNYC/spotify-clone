@@ -1,0 +1,39 @@
+.album-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+  
+  .album-card img {
+    width: 4em;
+    height: 4em;
+    object-fit: cover;
+    margin-right: 0.5em;
+  }
+  
+  .album-card .album-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .album-card h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: normal;
+  }
+  
+  .album-card p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  .album-card .artist-tag {
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 0.5em;
+  }
+  
