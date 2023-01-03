@@ -14,6 +14,36 @@
     border-radius: 50%;
     margin-right: 0.5em;
   }
+
+  .favorite-button {
+    background-color: transparent;
+    border: none;
+    /* color: #e74c3c; */
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .favorite-button:hover {
+    color: #c0392b; /* darker red */
+  }
+
+  .liked {
+    color: #e74c3c;
+  }
+
+  .minus-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .minus-button:hover {
+    color: red;
+  }
   
   .artist-card .artist-info {
     display: flex;

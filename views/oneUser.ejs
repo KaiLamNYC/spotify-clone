@@ -4,14 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/oneUser.css">
+    <link rel="stylesheet" href="/css/allAlbums.css">
 
     <title>User</title>
 </head>
 <body>
     <%- include("./partials/navbar") %>
-    <p>
-        <%=user.UserName%>
-    </p>
+    
+
+    <div class="user-profile">
+        <img src="<%=user.Img%>" alt="User image">
+        <h1><%=user.UserName%></h1>
+        <div class="albums">
+          <h2>Liked Albums</h2>
+          <!-- <div class="album-card">
+            <img src="" alt="Album cover">
+            <div class="album-info">
+              <h3>Album Name</h3>
+              <p class="artist-tag">by Artist Name</p>
+              <p>Likes: 100</p>
+            </div>
+          </div> -->
+          <% albums.forEach((album) => { %>
+            <div class="album-card">
+                <img class="album-cover" src="<%=album.Img%>" alt="Album cover">
+                <div class="album-info">
+                  <h3>
+                    <a href="/album/<%=album._id%>">
+                        <%=album.Name%>
+                    </a>
+                  </h3>
+                  <p class="artist-tag">by 
+                    <a href="/artist/<%=album.Artist%>">
+                      <%=album.Artist%>
+                    </a>
+                  </p>
+                </div>
+            </div>
+            <%})%>
+          
+          
+          <!-- Add albums here -->
+        </div>
+        <div class="artists">
+          <h2>Artists</h2>
+          <!-- Add artists here -->
+          <% artists.forEach((artist) => { %>
+
+            <div class="artist-card">
+                <img src="<%=artist.Img%>" alt="Artist image">
+                
+                  <h3>
+                    <a href="/artist/<%=artist._id%>">
+                        <%=artist.Name%>
+                    </a>
+                  </h3>
+                  
+                  
+                
+              </div>
+              
+    
+            <%})%>
+          
+        </div>
+        <div class="songs">
+          <h2>Liked Songs</h2>
+          <!-- Add songs here -->
+          <% songs.forEach((song) => { %>
+
+            <div class="album-card">
+                <img src="<%=song.Img%>" alt="Album cover" class="album-cover">
+                <div class="album-info">
+                  <h3>
+                    <a href="/song/<%=song.Name%>">
+                        <%=song.Name%>
+                    </a>
+                  </h3>
+                  <p class="artist-tag">by
+                    <% song.Artists.forEach((artist) => { %>
+                      <a href="/artist/<%=artist%>">
+                        <%=artist%>
+                      </a>
+                    <%})%>
+                    
+                  </p>
+                  <p>Likes: <%=song.UserLikes%></p>
+                  
+    
+                </div>
+            </div>
+              
+    
+            <%})%>
+        </div>
+        <div class="playlists">
+          <h2>Playlists</h2>
+          <!-- Add playlists here -->
+        </div>
+      </div>
+      
 </body>
 </html>

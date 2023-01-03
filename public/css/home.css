@@ -27,4 +27,6 @@ nav {
     margin: 0;
     padding: 0;
   }
-  
+  .welcome {
+    font-size: 1em;
+  }

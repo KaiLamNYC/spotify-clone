@@ -1,4 +1,8 @@
 
+
+//NEED TO PASS IN THE WHICHEVER USER IS "LOGGED IN" TO ALL THE EJS FUNCTIONS IN ORDER TO RENDER A "USER" VIEW/EXPERIENCE
+//IN ORDER TO ACT AS THE USER AND PERFORM FUNCTIONS AS THE "USER"
+
 //importing the modules
 const express = require('express');
 const app = express();
@@ -18,7 +22,7 @@ app.set('view engine', 'ejs')
 app.set("views", path.join(__dirname, 'views'));
 
 //serving up the static files
-app.use(express.static(path.join(__dirname, 'public/css')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //logging all the requests with morgan in the terminal
 app.use(logger('dev'));

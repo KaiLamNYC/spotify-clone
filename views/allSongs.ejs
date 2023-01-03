@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="allAlbums.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/allAlbums.css">
 
     <title>All Songs</title>
 </head>
@@ -15,7 +15,7 @@
     <% songs.forEach((song) => { %>
 
         <div class="album-card">
-            <img src="<%=song.Img%>" alt="Album cover">
+            <img src="<%=song.Img%>" alt="Album cover" class="album-cover">
             <div class="album-info">
               <h3>
                 <a href="/song/<%=song.Name%>">
@@ -31,11 +31,19 @@
                 
               </p>
               <p>Likes: <%=song.UserLikes%></p>
+              <button class="favorite-button" id="<%=song._id%>">
+                ❤
+              </button>
+              <button class="minus-button" id="<%=song._id%>">remove</button>
+
             </div>
         </div>
           
 
         <%})%>
+
+        <script src="/js/allSongs.js"></script>
+
     
 </body>
 </html>
