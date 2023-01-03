@@ -7,7 +7,8 @@ const router = express.Router()
 const {
     getAllArtists,
     addAlbumToArtist,
-    getOneArtist
+    getOneArtist,
+    createNewArtist
 } = require('../../controller/api/artistController')
 
 //localhost:3000/api/artists/allArtists
@@ -20,5 +21,10 @@ router.post('/addAlbumToArtist', addAlbumToArtist)
 //function to get one artist
 //localhost:3000/api/artists/oneArtist/:id
 router.get('/oneArtist/:id', getOneArtist)
+
+//creating a new artist
+//localhost:3000/api/artists/createArtist
+router.post('/createArtist', createNewArtist)
+
 
 module.exports = router

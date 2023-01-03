@@ -78,11 +78,38 @@ async function getOneArtist(req, res) {
     }
 }
 
+//function to create a new artist
+async function createNewArtist(req, res) {
+    try {
+
+
+        let newArtist = {
+            Name: req.body.Name,
+            Img: req.body.Img
+        }
+
+        await Artist.create(newArtist)
+
+        res.json({
+                    message:'success',
+                    payload: newArtist
+                })
+
+    } catch (err) {
+        console.log(err);
+        res.json({
+            message: 'failed',
+            payload: err
+        })
+    }
+}
+
 
 
 
 module.exports = {
     getAllArtists,
     addAlbumToArtist,
-    getOneArtist
+    getOneArtist,
+    createNewArtist
 }

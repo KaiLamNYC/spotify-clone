@@ -52,6 +52,21 @@
     font-weight: normal;
   }
   
-
+  .delete-button {
+    background-color: #e74c3c; /* Green */
+    border: none;
+    color: white;
+    padding: 1em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    color: black; /* darker red */
+  }
+  
  
   

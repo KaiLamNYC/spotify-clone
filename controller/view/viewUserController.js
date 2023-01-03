@@ -44,8 +44,22 @@ async function renderOneUser(req, res) {
     }
 }
 
+//function to render create user page
+async function renderCreateUserPage(req, res){
+    try {
+
+        let loggedInUser = await User.findById("63b284734181d706bd6a4007")
+
+        res.render('createUser', {cozy: loggedInUser})
+    } catch (err) {
+        console.log(`renderCreateUserPage error: ${err}`);
+
+    }
+}
+
 
 module.exports = {
     renderAllUsers,
-    renderOneUser
+    renderOneUser,
+    renderCreateUserPage
 }

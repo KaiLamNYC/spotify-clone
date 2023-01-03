@@ -8,12 +8,14 @@ const router = express.Router();
 //importing the functions from the controller later
 const {
   renderAllUsers,
-  renderOneUser
+  renderOneUser,
+  renderCreateUserPage
 } = require('../../controller/view/viewUserController')
 
 const {
   renderAllArtists,
-  renderOneArtist
+  renderOneArtist,
+  renderCreateArtistPage
 } = require('../../controller/view/viewArtistController')
 
 const {
@@ -36,12 +38,16 @@ router.get('/home', (req, res) => {
 router.get('/allUsers', renderAllUsers);
 //rendering one user
 router.get('/user/:name', renderOneUser);
+//rendering create user page
+router.get('/createUser', renderCreateUserPage);
 
 //ARTIST RENDERS
 //rendering all of the artists
 router.get('/allArtists', renderAllArtists);
 //rendering one artist
 router.get('/artist/:id', renderOneArtist);
+//rendering create user page
+router.get('/createArtist', renderCreateArtistPage);
 
 //ALBUM RENDERS
 //rendering all of the albums

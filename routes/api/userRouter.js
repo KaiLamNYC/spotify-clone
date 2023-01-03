@@ -12,7 +12,9 @@ const {
     addUserFavoriteSong,
     deleteUserFavoriteSong,
     userFollowArtist,
-    userUnfollowArtist
+    userUnfollowArtist,
+    createNewUser,
+    deleteUser
 } = require('../../controller/api/userController')
 
 //get route to get all the users
@@ -46,5 +48,14 @@ router.post('/follow-artist', userFollowArtist)
 //unfollow an artist
 //localhost:3000/api/users/unfollow-artist
 router.delete('/unfollow-artist', userUnfollowArtist)
+
+//create new user
+//localhost:3000/api/users/create-user
+router.post('/create-user', createNewUser)
+
+//deleting a user
+//localhost:3000/api/users/delete-user/:name
+
+router.delete('/delete-user/:name', deleteUser)
 
 module.exports = router

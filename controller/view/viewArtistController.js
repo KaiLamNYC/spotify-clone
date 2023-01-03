@@ -36,7 +36,21 @@ async function renderOneArtist(req, res) {
     }
 }
 
+//function to render create artist page
+async function renderCreateArtistPage(req, res){
+    try {
+
+        let loggedInUser = await User.findById("63b284734181d706bd6a4007")
+
+        res.render('createArtist', {cozy: loggedInUser})
+    } catch (err) {
+        console.log(`renderCreateArtistPage error: ${err}`);
+
+    }
+}
+
 module.exports = {
     renderAllArtists,
-    renderOneArtist
+    renderOneArtist,
+    renderCreateArtistPage
 }

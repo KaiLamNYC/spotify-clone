@@ -239,6 +239,56 @@ async function userUnfollowArtist(req, res){
 }
 
 //function to create a new user
+async function createNewUser(req, res) {
+    try {
+        let newUser = {
+            UserName: req.body.UserName,
+            Img: req.body.Img
+        }
+
+        await User.create(newUser)
+
+        res.redirect(`/user/${newUser.UserName}`)
+
+    } catch (err) {
+        console.log(err);
+        res.json({
+            message: 'failed to create new user',
+            payload: err
+        })
+
+    }
+}
+
+//function to delete a user
+async function deleteUser(req, res){
+
+    try{
+
+        //.name refers to the request parameter not the objects key UserName
+        let deleteTarget = req.params.name
+
+        await User.deleteOne({ UserName: deleteTarget})
+
+        res.redirect(`/allUsers`)
+
+        res.json({
+            message: "success",
+            payload: deleteTarget
+        });
+
+        // res.redirect(`/allUsers`)
+
+    } catch (err) {
+        console.log(`deleteUser failed: ${err}`);
+        res.json({
+            message: 'failed to delete user',
+            payload: err
+        })
+    }
+}
+
+
 
 module.exports = {
     getAllUsers,
@@ -248,7 +298,9 @@ module.exports = {
     addUserFavoriteSong,
     deleteUserFavoriteSong,
     userFollowArtist,
-    userUnfollowArtist
+    userUnfollowArtist,
+    createNewUser,
+    deleteUser
 }
 
 //IN ORDER TO ADD STUFF TO A SPECIFIC USER OR ACT AS IF YOURE LOGGED INTO ONE USER, YOU NEED TO PASS THE EJS FORM THE USERS ID

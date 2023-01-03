@@ -17,6 +17,8 @@
     <div class="user-profile">
         <img src="<%=user.Img%>" alt="User image">
         <h1><%=user.UserName%></h1>
+        <button class="delete-button" id="<%=user._id%>">Delete</button>
+
         <div class="albums">
           <h2>Liked Albums</h2>
           <!-- <div class="album-card">
@@ -105,6 +107,6 @@
           <!-- Add playlists here -->
         </div>
       </div>
-      
+      <script src="/js/oneUser.js"></script>
 </body>
 </html>
