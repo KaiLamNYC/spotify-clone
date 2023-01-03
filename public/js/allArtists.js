@@ -13,8 +13,8 @@ removeLikeButton.forEach((button) => {
 })
 
 const USER = '63b284734181d706bd6a4007'
-const addFavoriteAPI = 'http://localhost:3000/api/users/add-favorite-album'
-const deleteFavoriteAPI = 'http://localhost:3000/api/users/delete-favorite-album'
+const addFavoriteAPI = 'http://localhost:3000/api/users/follow-artist'
+const deleteFavoriteAPI = 'http://localhost:3000/api/users/unfollow-artist'
 
 
 async function addToLikes(event){
@@ -23,7 +23,7 @@ async function addToLikes(event){
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             "userId": `${USER}`,
-            "albumId": `${this.id}`,
+            "artistId": `${this.id}`,
             
         })
     }
@@ -42,7 +42,7 @@ async function removeFromLikes(event){
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             "userId": `${USER}`,
-            "albumId": `${this.id}`,
+            "artistId": `${this.id}`,
             
         })
     }

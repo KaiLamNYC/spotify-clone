@@ -238,6 +238,8 @@ async function userUnfollowArtist(req, res){
     }
 }
 
+//function to create a new user
+
 module.exports = {
     getAllUsers,
     getOneUser,

@@ -3,13 +3,13 @@ let likeButtons = document.querySelectorAll('.favorite-button')
 // console.log(albums);
 
 likeButtons.forEach((button) => {
-    button.addEventListener('click', addAlbumToLikes)
+    button.addEventListener('click', addToLikes)
 })
 
 let removeLikeButton = document.querySelectorAll('.minus-button')
 
 removeLikeButton.forEach((button) => {
-    button.addEventListener('click', deleteAlbumFromLikes)
+    button.addEventListener('click', removeFromLikes)
 })
 
 const USER = '63b284734181d706bd6a4007'
@@ -17,7 +17,7 @@ const addFavoriteAPI = 'http://localhost:3000/api/users/add-favorite-song'
 const deleteFavoriteAPI = 'http://localhost:3000/api/users/delete-favorite-song'
 
 
-async function addAlbumToLikes(event){
+async function addToLikes(event){
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -36,7 +36,7 @@ async function addAlbumToLikes(event){
 
 }
 
-async function deleteAlbumFromLikes(event){
+async function removeFromLikes(event){
     const requestOptions = {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
