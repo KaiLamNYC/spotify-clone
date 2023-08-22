@@ -24,6 +24,7 @@ async function renderOneAlbum(req, res) {
 
         let albumSongs = await Song.find({ _id: result[0].Songs})
 
+        //in reality would take the userid from the session or something then use that to pass through to the ejs file
         let loggedInUser = await User.findById("63b284734181d706bd6a4007")
 
 
